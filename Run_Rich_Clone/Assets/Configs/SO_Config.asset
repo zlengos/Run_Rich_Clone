@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ce603d70c84cb29af5380d31059c2f, type: 3}
+  m_Name: SO_Config
+  m_EditorClassIdentifier: 
+  turnDuration: 1
+  movementSpeed: 8
+  forwardSpeed: 3
+  moveSensitivity: 0.0001
+  initialMoney: 40
+  tiltAngle: 15
+  tiltDuration: 0.2
+  allModels:
+  - moneyToSwap: 30
+    playerModel: {fileID: -1203469206917290306, guid: 4dafc6c62847080439bc7a3fa6266201, type: 3}
+  - moneyToSwap: 40
+    playerModel: {fileID: -2625820094661565734, guid: 5490b68195466e5418872b069487c74b, type: 3}
+  - moneyToSwap: 75
+    playerModel: {fileID: -561338802473485215, guid: b3579edeac4dd6d4bb0074ffb606b9fc, type: 3}
+  - moneyToSwap: 99
+    playerModel: {fileID: -8687541253693719864, guid: 02eb752e463b2b14bbd8e2987257adde, type: 3}
+  allMoneyItems:
+  - name: Bottle
+    moneyChangeCount: -20
+  - name: Bills
+    moneyChangeCount: 3
+  - name: GoodChoice
+    moneyChangeCount: 25
+  - name: BadChoice
+    moneyChangeCount: -30
