@@ -8,33 +8,15 @@ namespace Tools
     {
         public static void ShowCanvas(CanvasGroup canvasGroup, Action onComplete = null, float duration = 0.5f)
         {
-            if (canvasGroup != null)
-            {
-                canvasGroup.DOFade(1f, duration).OnComplete(() =>
-                {
-                    canvasGroup.interactable = true;
-                    canvasGroup.blocksRaycasts = true;
-                    
-                    onComplete?.Invoke();
-                });
-            }
+            ToggleCanvas(canvasGroup, true, onComplete);
         }
 
         public static void HideCanvas(CanvasGroup canvasGroup, Action onComplete = null, float duration = 0.5f)
         {
-            if (canvasGroup != null)
-            {
-                canvasGroup.DOFade(0f, duration).OnComplete(() =>
-                {
-                    canvasGroup.interactable = false;
-                    canvasGroup.blocksRaycasts = false;
-
-                    onComplete?.Invoke();
-                });
-            }
+            ToggleCanvas(canvasGroup, false, onComplete);
         }
 
-        public static void ToggleCanvas(CanvasGroup canvasGroup, bool isActive, float duration = 0.5f)
+        public static void ToggleCanvas(CanvasGroup canvasGroup, bool isActive, Action onComplete = null, float duration = 0.5f)
         {
             if (canvasGroup != null)
             {
@@ -44,6 +26,10 @@ namespace Tools
                 {
                     canvasGroup.interactable = isActive;
                     canvasGroup.blocksRaycasts = isActive;
+                    
+                    onComplete?.Invoke();
+                    
+                    canvasGroup.gameObject.SetActive(isActive);
                 });
             }
         }
